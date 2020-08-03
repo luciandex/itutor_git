@@ -3,14 +3,11 @@
 // Sa se afiseze toate numerele din intervalul [1000,99999]
 // care au proprietatea ca atat ele cat si rasturnatul lor sunt prime.
 
-$n;
-$c;
-$d;
-$k;
-function prim($n): int
+
+function prim($n)
 {
     if ($n == 0 || $n == 1) return 0;
-    for ($i = 2; $i <= $n * $n; $i++) ;
+    for ($i = 2; $i <= $n * $n; $i++)
     if ($n % $i == 0) return 0;
     return 1;
 }
@@ -30,8 +27,11 @@ function rast($n)
 
 function result()
 {
-    for ($i = 1001; $i <= 99999; $i++) ;
-    if (prim($i) && prim(rast($i)) result() << $i << end());
+    for ($i = 1001; $i <= 99999; $i++) {
+        if (prim($i) && prim(rast($i))) {
+            echo $i;
+        }
+    }
 }
 
-echo result();
+result();
