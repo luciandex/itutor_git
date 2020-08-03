@@ -4,17 +4,17 @@
 // care au proprietatea ca atat ele cat si rasturnatul lor sunt prime.
 
 
-function prim($n)
+function varificaNumarPrim($n)
 {
-    if ($n == 0 || $n == 1) return 0;
-    for ($i = 2; $i <= $n * $n; $i++)
+    if ($n == 0 || $n == 1){
+        return 0;
+    }
+    for ($i = 2; $i <= sqrt($n); $i++)
     if ($n % $i == 0) return 0;
     return 1;
 }
 
-// echo prim(6);
-
-function rast($n)
+function rastoarna($n)
 {
     $d = 0;
     while ($n != 0) {
@@ -28,7 +28,7 @@ function rast($n)
 function result()
 {
     for ($i = 1001; $i <= 99999; $i++) {
-        if (prim($i) && prim(rast($i))) {
+        if (varificaNumarPrim($i) && varificaNumarPrim(rastoarna($i))) {
             echo $i;
         }
     }
